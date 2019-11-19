@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Upload Video</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}"> 
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+         <div class="col-md-6 offset-md-3 mb-3 mt-3">
+           <h2 class="mb-3 mt-3">Upload your video...</h2>
+
+           <div class="form-group mb-3">
+             <div class="custom-file">
+               <input type="file" class="custom-file-input" id="file_input" oninput="input_filename();">
+               <label for="file_input" id="file_input_label" class="custom-file-label">Select File</label>
+             </div>
+           </div>
+
+           <button onclick="upload('{{ request.url }}')" id="upload_btn" class="btn btn-primary">Upload File</button>
+
+           <button class="btn btn-primary d-none" id="loading_btn" type="button" disabled>
+             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+             Uploading...
+           </button>
+
+           <button class="btn btn-secondary d-none" id="cancel_btn" type="button">Cancel Upload</button>
+
+           <div id="progress_wrapper" class="d-none">
+              <label id="progress_status">50% uploaded</label>
+              <div class="progress mb-3">
+                <div id="progress" class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+           </div>
+
+          <div id="alert_wrapper"></div>           
+         </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='upload.js') }}"></script>
+  </body>
+</html>
