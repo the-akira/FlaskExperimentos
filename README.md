@@ -6,6 +6,8 @@
 
 Experimentos diversos com **[Flask](https://flask.palletsprojects.com/en/1.1.x/)**: exemplos, tutoriais e pequenas aplicações
 
+### Instalação
+
 Para experimentos com os códigos, crie um clone do repositório:
 
 ```
