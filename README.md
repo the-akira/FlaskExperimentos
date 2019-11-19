@@ -12,6 +12,20 @@ Para experimentos com os códigos, crie um clone do repositório:
 git clone https://github.com/the-akira/flask-experimentos.git
 ```
 
+Dentro do diretório principal:
+
+Crie um Ambiente Virtual
+
+```
+python -m venv myvenv
+```
+
+Ative o Ambiente Virtual
+
+```
+source myvenv/bin/activate
+```
+
 Instale as dependências necessárias:
 
 ```
