@@ -6,7 +6,8 @@ from flask_graphql import GraphQLView
 app = Flask(__name__)
 app.debug = True
 
-example_query = """
+# Visitar 'http://localhost:5000/graphql' e executar a query
+query = """
 {
   allEmployees(sort: [NAME_ASC, ID_ASC]) {
     edges {
