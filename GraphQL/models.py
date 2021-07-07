@@ -38,7 +38,7 @@ class Employee(Base):
 # >>> from models import Base, Department, Employee
 # >>> Base.metadata.create_all(bind=engine)
 
-# >>> # Preenchendo as tabelas com dados
+# Preenchendo as tabelas com dados
 # >>> engenharia = Department(name='Engenharia')
 # >>> db_session.add(engenharia)
 # >>> rh = Department(name='Recursos Humanos')
