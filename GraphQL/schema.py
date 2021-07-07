@@ -22,11 +22,11 @@ class Role(SQLAlchemyObjectType):
 
 class Query(graphene.ObjectType):
     node = relay.Node.Field()
-    # Allow only single column sorting
+    # Permitir apenas ordenação de coluna única
     all_employees = SQLAlchemyConnectionField(Employee, sort=Employee.sort_argument())
-    # Allows sorting over multiple columns, by default over the primary key
+    # Permite a ordenação em várias colunas, por padrão na chave primária
     all_roles = SQLAlchemyConnectionField(Role)
-    # Disable sorting over this field
+    # Desativa a ordenação neste campo
     all_departments = SQLAlchemyConnectionField(Department, sort=None)
 
 schema = graphene.Schema(query=Query, types=[Department, Employee, Role])
