@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Ajax Live Search</title>
-		<meta charset="utf-8">
-		<script src="{{ url_for('static', filename='search.js') }}"></script>
-	</head>
-	<body>
-		<h1>Ajax Live Search</h1>
-		<input type="text" onkeyup="live_search(this.value)">
-		<br>
-		<div id="results"></div>
-	</body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <head>
+        <title>Ajax Live Search</title>
+        <meta charset="utf-8">
+        <script src="{{ url_for('static', filename='search.js') }}"></script>
+    </head>
+    <body>
+        <h1>Ajax Live Search</h1>
+        <input type="text" onkeyup="live_search(this.value)">
+        <br>
+        <div id="results"></div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </html>
