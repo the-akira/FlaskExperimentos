@@ -9,10 +9,10 @@ init_db()
 
 def save_changes(album, form, new=False):
     """
-    Save the changes to the database
+    Salva as mudanças no banco de dados
     """
-    # Get data from form and assign it to the correct attributes
-    # of the SQLAlchemy table object
+    # Obtém dados do formulário e os aloca para os atributos corretos
+    # do objeto tabela SQLAlchemy
     artist = Artist()
     artist.name = form.artist.data
  
@@ -23,19 +23,22 @@ def save_changes(album, form, new=False):
     album.media_type = form.media_type.data
  
     if new:
-        # Add the new album to the database
+        # Adiciona o novo álbum ao banco de dados
         db_session.add(album)
  
-    # commit the data to the database
+    # Faz commit dos dados ao banco de dados
     db_session.commit()
   
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    qry = db_session.query(Album).all()
+    for q in qry:
+        print(q.title, q.artist)
     search = MusicSearchForm(request.form)
     if request.method == 'POST':
         return search_results(search)
  
-    return render_template('index.html', form=search)
+    return render_template('index.html', form=search, qry=qry)
  
 @app.route('/results')
 def search_results(search):
@@ -67,7 +70,7 @@ def search_results(search):
         flash('No results found!')
         return redirect('/')
     else:
-        # display results
+        # Apresenta os resultados
         table = Results(results)
         table.border = True
         for result in results:
@@ -77,12 +80,12 @@ def search_results(search):
 @app.route('/new_album', methods=['GET', 'POST'])
 def new_album():
     """
-    Add a new album
+    Adiciona um novo álbum
     """
     form = AlbumForm(request.form)
  
     if request.method == 'POST' and form.validate():
-        # save the album
+        # Salva o álbum
         album = Album()
         save_changes(album, form, new=True)
         flash('Album created successfully!')
@@ -92,14 +95,13 @@ def new_album():
 
 @app.route('/item/<int:id>', methods=['GET', 'POST'])
 def edit(id):
-    qry = db_session.query(Album).filter(
-                Album.id==id)
+    qry = db_session.query(Album).filter(Album.id==id)
     album = qry.first()
  
     if album:
         form = AlbumForm(formdata=request.form, obj=album)
         if request.method == 'POST' and form.validate():
-            # save edits
+            # Salva as edições
             save_changes(album, form)
             flash('Album updated successfully!')
             return redirect('/')
@@ -110,17 +112,15 @@ def edit(id):
 @app.route('/delete/<int:id>', methods=['GET', 'POST'])
 def delete(id):
     """
-    Delete the item in the database that matches the specified
-    id in the URL
+    Deleta o item no banco de dados que corresponde ao id especificado na URL
     """
-    qry = db_session.query(Album).filter(
-        Album.id==id)
+    qry = db_session.query(Album).filter(Album.id==id)
     album = qry.first()
  
     if album:
         form = AlbumForm(formdata=request.form, obj=album)
         if request.method == 'POST' and form.validate():
-            # delete the item from the database
+            # Deleta o item do banco de dados
             db_session.delete(album)
             db_session.commit()
  

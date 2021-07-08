@@ -6,7 +6,6 @@ from sqlalchemy.orm import relationship, backref
 engine = create_engine('sqlite:///mymusic.db', echo=True)
 Base = declarative_base()
  
- 
 class Artist(Base):
     __tablename__ = "artists"
  
@@ -18,7 +17,6 @@ class Artist(Base):
  
  
 class Album(Base):
-    """"""
     __tablename__ = "albums"
  
     id = Column(Integer, primary_key=True)
@@ -28,8 +26,7 @@ class Album(Base):
     media_type = Column(String)
  
     artist_id = Column(Integer, ForeignKey("artists.id"))
-    artist = relationship("Artist", backref=backref(
-        "albums", order_by=id))
+    artist = relationship("Artist", backref=backref("albums", order_by=id))
  
-# create tables
+# Cria tabelas
 Base.metadata.create_all(engine)

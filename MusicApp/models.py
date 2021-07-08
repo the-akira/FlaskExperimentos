@@ -19,5 +19,4 @@ class Album(db.Model):
     media_type = db.Column(db.String)
  
     artist_id = db.Column(db.Integer, db.ForeignKey("artists.id"))
-    artist = db.relationship("Artist", backref=db.backref(
-        "albums", order_by=id), lazy=True)
+    artist = db.relationship("Artist", backref=db.backref("albums", order_by=id), lazy=True)

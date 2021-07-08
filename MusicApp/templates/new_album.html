@@ -1,4 +1,7 @@
 <title>New Album - Flask Music Database</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <h2>New Album</h2>
  
 {% from "_formhelpers.html" import render_field %}
@@ -10,5 +13,5 @@
         {{ render_field(form.publisher) }}
         {{ render_field(form.media_type) }}
     </dl>
-    <p><input type=submit value=Submit>
+    <input type=submit value=Submit>
 </form>
