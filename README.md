@@ -1,14 +1,12 @@
-<h1 align="center">Flask Experimentos</h1>
+# Experimentos Flask
 
-<h1 align="center">
-    <img alt="Python" title="Flask-Alquímia" src="https://i.imgur.com/AMiZrFB.png"> </br>
-</h1>
+![img](https://raw.githubusercontent.com/the-akira/FlaskExperimentos/master/FlaskExperimentos.png)
 
-Experimentos diversos com **[Flask](https://flask.palletsprojects.com/en/1.1.x/)**: exemplos, tutoriais e pequenas aplicações
+Experimentos diversos com **[Flask](https://flask.palletsprojects.com/en/2.0.x/)**: exemplos, tutoriais e pequenos apps.
 
 ### Instalação
 
-Para experimentos com os códigos, crie um clone do repositório:
+Para experimentar os códigos, primeiro crie um clone do repositório:
 
 ```
 git clone https://github.com/the-akira/flask-experimentos.git
@@ -34,4 +32,4 @@ Instale as dependências necessárias:
 pip install -r requirements.txt
 ```
 
-Navegue até o aplicativo que você deseja testar
+Navegue até o aplicativo que você deseja testar e siga as instruções.
