@@ -1,6 +1,10 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO
 
+# Instalar:
+# pip install python-socketio==4.3.1
+# pip install python-engineio==3.10.0
+# pip install Flask-SocketIO==4.2.1
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'vnkdjnfjknfl1232#'
 socketio = SocketIO(app)
