@@ -1,0 +1,134 @@
+{% extends 'public/templates/public_template.html' %}
+
+{% import 'macros/input_macros.html' as im %}
+
+{% block title %}Jinja{% endblock title %}
+
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Jinja Template</h1>
+            <hr>
+
+            <h3>Variáveis</h3>
+            <p>Nome: {{ nome }}</p>
+
+            <hr>
+
+            <h3>Looping</h3>
+            <ul>
+                {% for lang in langs %}
+                    <li>{{ lang }}</li>
+                {% endfor %}
+            </ul>
+
+            <hr>
+
+            <h3>Looping with Index</h3>
+            <ul>
+                {% for lang in langs %}
+                    <li>{{ loop.index }} : {{ lang }}</li>
+                {% endfor %}
+            </ul>
+
+            <hr>
+
+            <h3>Looping Dict</h3>
+            <ul>
+                {% for k, v in personagens.items() %}
+                    <li>{{ k }} : {{ v }}</li>
+                {% endfor %}
+            </ul>
+
+            <hr>
+
+            <h3>Access List Member</h3>
+            <p>{{ langs[0] }}</p>
+
+            <hr>
+
+            <h3>Access Dict Member</h3>
+            <p>{{ personagens['Akira'] }}</p>		
+
+            <hr>
+
+            <h3>Access Class Attributes</h3>
+            <p>{{ remote.name }}</p>
+
+            <hr>
+
+            <h3>Unpack Variables</h3>
+            <p>{% set a, b, c = cores %}</p>		
+            <p>{{ a }}</p>
+            <p>{{ b }}</p>
+            <p>{{ c }}</p>
+
+            <hr>
+
+            <h3>Call a Function</h3>
+            <p>{{ repeat('Flask is Awesome ', 5) }}</p>
+
+            <hr>
+
+            <h3>Call a Class Method</h3>
+            <p>{{ remote.clone() }}</p>
+
+            <hr>
+
+            <h3>Conditionals</h3>
+            {% if legal %}
+                <p>Legal é verdadeiro</p>
+            {% endif %}
+
+            <hr>
+
+            <h3>Comparisons</h3>
+            {% if idade < 18 %}
+                <p>No entry</p>
+            {% elif idade < 26 %}
+                <p>Nearly old enough</p>
+            {% else %}
+                <p>You may enter the door</p>
+            {% endif %}
+
+            <hr>
+
+            <h3>Math</h3>
+            <p>{{ idade/2 }}</p>
+
+            <hr>
+
+            <h3>Template Filters</h3>
+            <p>{{ langs|length }}</p>
+            <p>{{ nome|reverse }}</p>
+            <p>{{ nome|upper }}</p>
+
+            <hr>
+
+            <h3>Template Filters - join</h3>
+            <p>{{ langs|join(', ') }}</p>	
+
+            <hr>
+
+            <h3>Custom Filters</h3>
+            <p>{{ date|clean_date }}</p>
+
+            <hr>
+
+            <h3>Escaping</h3>
+            {{ html }}
+            {{ html|safe }}
+            {{ malicioso }}
+
+            <hr>
+
+            <h3>Macros</h3>
+            {{ im.input(label='Seu nome', name='name', id='name', placeholder='please enter your name') }}
+            {{ im.input(label='Sua idade', type='number', name='idade', id='idade', placeholder='please enter your age') }}
+            {{ im.input(label='Sua senha', type='password', name='password', id='password', placeholder='please enter your password') }}
+
+        </div>
+    </div>
+</div>
+{% endblock main %}

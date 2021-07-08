@@ -1,0 +1,34 @@
+body {
+    background-color:#2b353f;
+    opacity: 0.86;
+    color: white;
+}
+
+textarea{
+    resize: none;
+}
+
+.navbar{
+    border-bottom: 3px solid black !important;
+}
+
+.nav-link{
+    color: black !important;
+}
+
+.card-body{
+    color: black !important;
+}
+
+.nav-link:hover{
+    color: #007bff !important;
+}
+
+img{
+    padding: 5px;
+    margin-top: 5px;
+}
+
+hr{
+    background-color: white;
+}
