@@ -1,0 +1,18 @@
+<h1>Bem-vindo a nossa pesquisa!</h1>
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }} {{ form.name() }}
+    <br>
+    {{ form.saúde.label }} {{ form.saúde() }}
+    <br>
+    {{ form.comida.label }} {{ form.comida() }}
+    <br>
+    {{ form.humor.label }} {{ form.humor() }}
+    <br>
+    <p>Algum outro feedback?</p>
+    <br>
+    {{ form.feedback() }}
+    <br>
+    {{ form.submit() }}
+</form>

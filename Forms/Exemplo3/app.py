@@ -7,16 +7,16 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'kmykey'
 
 class SimpleForm(FlaskForm):
-	breed = StringField('What breed are you?')
-	submit = SubmitField('Click Me')
+	name = StringField('Qual o seu nome?')
+	submit = SubmitField('Enviar')
 
 @app.route('/', methods=['GET','POST'])
 def index():
 	form = SimpleForm()
 
 	if form.validate_on_submit():
-		session['breed'] = form.breed.data 
-		flash(f'You just changed your breed to: {session["breed"]}')
+		session['name'] = form.name.data 
+		flash(f'Você alterou o seu nome para: {session["name"]}')
 
 		return redirect(url_for('index'))
 

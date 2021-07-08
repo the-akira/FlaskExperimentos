@@ -1,0 +1,12 @@
+{% if name %}
+    <p>Você informou o nome {{ name }}</p>
+    <p>Atualize ele no formulário abaixo:</p>
+{% else %}
+    <p>Por favor, informe o seu nome:</p>
+{% endif %}
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }} {{ form.name() }}
+    {{ form.submit() }}
+</form>
