@@ -9,7 +9,7 @@ Experimentos diversos com **[Flask](https://flask.palletsprojects.com/en/2.0.x/)
 Para experimentar os códigos, primeiro crie um clone do repositório:
 
 ```
-git clone https://github.com/the-akira/flask-experimentos.git
+git clone https://github.com/the-akira/FlaskExperimentos.git
 ```
 
 Dentro do diretório principal:
