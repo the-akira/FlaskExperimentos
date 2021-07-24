@@ -1,48 +1,48 @@
 body {
-	background: #0D0D0D;
-	color: #EDEDED;
+    background: #0D0D0D;
+    color: #EDEDED;
 }
 
 h2 {
-	margin-top: 20px;
-	text-align: center;
-	font-size: 2.0rem;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 2.0rem;
 }
 
 div {
-	margin: 0 auto;
-	text-align: center;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .btn {
-	padding: 10px;
-	color: white;
-	background: #3F3F3F;
-	font-size: 1.2rem;
-	border: 2px solid white;
-	text-decoration: none;
+    padding: 10px;
+    color: white;
+    background: #3F3F3F;
+    font-size: 1.2rem;
+    border: 2px solid white;
+    text-decoration: none;
 }
 
 p {
-	margin-top: 30px;
-	text-align: center;
-	font-size: 1.2rem;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 a {
-	color:  white;
+    color:  white;
 }
 
 dd {
-	margin-inline-start: 0px;
+    margin-inline-start: 0px;
 }
 
 form {
-	text-align: center;
-	margin: 0 auto;
-	background: #3F3F3F;
-	width: 30%;
-	border: 2px solid white;
+    text-align: center;
+    margin: 0 auto;
+    background: #3F3F3F;
+    width: 30%;
+    border: 2px solid white;
 }
 
 label {
@@ -50,60 +50,60 @@ label {
 }
 
 ul > li {
-	text-align: center;
-	list-style: none;
-	margin-bottom: 30px;
-	font-size: 1.3rem;
+    text-align: center;
+    list-style: none;
+    margin-bottom: 30px;
+    font-size: 1.3rem;
 }
 
 input[type="submit"] {
-	margin-bottom: 15px;
-	padding: 10px 15px 10px 15px;
-	color: white;
-	background: #303030;
-	font-size: 1.2rem;
-	border: 2px solid white;
-	font-weight: bold;
+    margin-bottom: 15px;
+    padding: 10px 15px 10px 15px;
+    color: white;
+    background: #303030;
+    font-size: 1.2rem;
+    border: 2px solid white;
+    font-weight: bold;
 }
 
 input[type="text"] {
-	height: 28px;
-	margin-top: 6.5px;
-	margin-bottom: 6.5px;
-	border: 2px solid black;
+    height: 28px;
+    margin-top: 6.5px;
+    margin-bottom: 6.5px;
+    border: 2px solid black;
 }
 
 select[id="select"] {
-	margin-top: 7px;
-	margin-bottom: 7px;
-	height: 28px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    height: 28px;
 }
 
 select[id="media_type"] {
-	margin-top: 7px;
-	height: 28px;
+    margin-top: 7px;
+    height: 28px;
 }
 
 table {
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
-	border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 table, th, td {
-	border: 1px solid white;
+    border: 1px solid white;
 }
 
 th, td {
-	padding: 10px;
-	text-align: center;
-	font-size: 1.3rem;
-	background: #303030;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+    background: #303030;
 }
 
 @media screen and (max-width: 750px) {
-	form {
-		width: 80%;
-	}
+    form {
+        width: 80%;
+    }
 }
